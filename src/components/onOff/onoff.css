@@ -1,0 +1,21 @@
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.on {
+  background-color: greenyellow;
+}
+
+.off {
+  background-color: #e70f0f;
+}
