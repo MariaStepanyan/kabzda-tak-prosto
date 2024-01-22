@@ -1,25 +1,31 @@
 import React, { useState } from 'react'
-import s from './onoff.module.css'
+import s from './unControlledOnoff.module.css'
 
 type OnOffPropsType = {
-  isOn: boolean
-  setOn: (isOn: boolean) => void
+    onChange: (isOn: boolean) => void
+  
 }
 
-export const OnOff = (props: OnOffPropsType) => {
-  const onClickHandler = () => {
-    props.setOn(!props.isOn)
+export const UnControlledOnOff = (props: OnOffPropsType) => {
+  const [on, setOn] = useState(false)
+  const onClickOnHandler = () => {
+    setOn(true)
+    props.onChange(true)
   }
 
+  const onClickOffHandler = () => {
+    setOn(false)
+    props.onChange(false)
+  }
   return (
     <div className={s.wrapper}>
-      <button onClick={onClickHandler} className={props.isOn ? s.on : ''}>
+      <button onClick={onClickOnHandler}  className={on ? s.on : ''}>
         on
       </button>
-      <button onClick={onClickHandler} className={props.isOn ? '' : s.off}>
+      <button onClick={onClickOffHandler} className={on ? '' : s.off}>
         off
       </button>
-      <span className={`${s.dot} ${props.isOn ? s.on : s.off}`}></span>
+      <span className={`${s.dot} ${on ? s.on : s.off}`}></span>
       {/* {on && <span className={`${s.on} ${s.dot}`}></span>}
       {!on && <span className={`${s.off} ${s.dot}`}></span>} */}
     </div>
