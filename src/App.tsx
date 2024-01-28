@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <PageTitle title={'This is APP component'} />
       {/* <Rating value={3} /> */}
-      {/* <Accordion title={'Menu'} collapsed={accCollapsed} setAccCollapsed={setAccCollapsed}/> */}
+      <Accordion title={'Menu'} collapsed={accCollapsed} setAccCollapsed={setAccCollapsed}/>
       {/* <Accordion title={'Another'} collapsed={false} /> */}
       {/* <UnControlledAccordion title={'Another'} /> */}
       {/* <Rating value={ratingValue} setRatingValue={setRatingValue}/> */}

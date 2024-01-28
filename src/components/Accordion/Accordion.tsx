@@ -2,6 +2,7 @@ type AccordionPropsType = {
   title: string
   collapsed: boolean
   setAccCollapsed: (collapsed: boolean) => void
+  
 }
 
 export function Accordion(props: AccordionPropsType) {
@@ -22,7 +23,7 @@ type AccordionTitilePropstype = {
 }
 
 function AccordionTitile(props: AccordionTitilePropstype) {
-  return <h3 onClick={props.onClick}>{props.accTitle}</h3>
+  return <h3 onClick={() => props.onClick()}>{props.accTitle}</h3>
 }
 
 function AccordionBody() {
