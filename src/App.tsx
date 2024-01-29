@@ -17,13 +17,11 @@ function App() {
   return (
     <div className="App">
       <PageTitle title={'This is APP component'} />
-      {/* <Rating value={3} /> */}
       <Accordion title={'Menu'} collapsed={accCollapsed} setAccCollapsed={setAccCollapsed}/>
-      {/* <Accordion title={'Another'} collapsed={false} /> */}
-      {/* <UnControlledAccordion title={'Another'} /> */}
-      {/* <Rating value={ratingValue} setRatingValue={setRatingValue}/> */}
-      {/* <UnControlledRating /> */}
-      {/* <UnControlledOnOff onChange={setOn}/> {on.toString()} */}
+      <UnControlledAccordion title={'Another'} />
+      <Rating value={ratingValue} setRatingValue={setRatingValue}/>
+      <UnControlledRating value={5}/>
+      <UnControlledOnOff onChange={setOn}/> {on.toString()}
       <OnOff isOn={on} setOn ={setOn}/>
     </div>
   )
