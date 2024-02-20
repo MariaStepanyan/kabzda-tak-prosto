@@ -45,11 +45,7 @@ export const MySelect = () => {
       </div>
       {!collapsed &&
         items.map((i) => (
-          <div
-            style={{ cursor: 'pointer' }}
-            onClick={() => onSelectOptionHandler(i.id)}
-            key={i.id}
-          >
+          <div onClick={() => onSelectOptionHandler(i.id)} key={i.id}>
             {i.title}
           </div>
         ))}

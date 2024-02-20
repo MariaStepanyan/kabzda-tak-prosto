@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       {/* <PageTitle title={'This is APP component'} /> */}
       {/* <Accordion title={'Menu'} collapsed={accCollapsed} setAccCollapsed={setAccCollapsed}/> */}
-      <UnControlledAccordion title={'Another'} />
+      {/* <UnControlledAccordion title={'Another'} /> */}
       {/* <Rating value={ratingValue} setRatingValue={setRatingValue}/>
       <UnControlledRating value={5}/>
       <UnControlledOnOff onChange={setOn}/> {on.toString()}
