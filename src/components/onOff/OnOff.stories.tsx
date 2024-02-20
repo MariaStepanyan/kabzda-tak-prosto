@@ -1,23 +1,23 @@
 import { action } from '@storybook/addon-actions'
 
-import { OnOff } from './OnOff'
+import { OnOffSecret } from './OnOff'
 import { useState } from 'react'
 
 export default {
-  component: OnOff,
+  component: OnOffSecret,
 }
 
 // const setAccCollapsedHandler = action('setAccCollapsed')
 
 export const On = () => {
-  return <OnOff isOn={true} setOn={() => {}} />
+  return <OnOffSecret isOn={true} setOn={() => {}} />
 }
 
 export const Off = () => {
-  return <OnOff isOn={false} setOn={() => {}} />
+  return <OnOffSecret isOn={false} setOn={() => {}} />
 }
 
 export const Toggle = () => {
   const [isOn, setIsOn] = useState(false)
-  return <OnOff isOn={isOn} setOn={() => setIsOn(!isOn)} />
+  return <OnOffSecret isOn={isOn} setOn={() => setIsOn(!isOn)} />
 }

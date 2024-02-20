@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import './App.css'
-import { Accordion } from './components/Accordion/Accordion'
-import { Rating, RatingValueType } from './components/Rating/Rating'
-import { PageTitle } from './components/Title/Title'
-import { UnControlledOnOff } from './components/unControlledOnOffonOff/UnControlledOnOff'
-import { UnControlledAccordion } from './components/unControlledAccordion/UnControlledAccordion'
-import { UnControlledRating } from './components/unControlledRating/UnControlledRating'
-import { OnOff } from './components/onOff/OnOff'
-import { Select } from './components/select/Select'
+import { AccordionSecret } from './components/Accordion/Accordion'
+import { RatingSecret, RatingValueType } from './components/Rating/Rating'
+import { PageTitleSecret } from './components/Title/Title'
+import { UnControlledOnOffSecret } from './components/unControlledOnOffonOff/UnControlledOnOff'
+import { UnControlledAccordionSecret } from './components/unControlledAccordion/UnControlledAccordion'
+import { UnControlledRatingSecret } from './components/unControlledRating/UnControlledRating'
+import { OnOffSecret } from './components/onOff/OnOff'
+import { SelectSecret } from './components/select/Select'
 
 export type ItemType = {
   title: string
@@ -19,6 +19,15 @@ const items: ItemType[] = [
   { title: 'Valera', id: 2 },
 ]
 
+export const PageTitle = React.memo(PageTitleSecret)
+export const Accordion = React.memo(AccordionSecret)
+export const UnControlledAccordion = React.memo(UnControlledAccordionSecret)
+export const Rating = React.memo(RatingSecret)
+export const UnControlledRating = React.memo(UnControlledRatingSecret)
+export const UnControlledOnOff = React.memo(UnControlledOnOffSecret)
+export const OnOff = React.memo(OnOffSecret)
+export const Select = React.memo(SelectSecret)
+
 function App() {
   const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
   const [accCollapsed, setAccCollapsed] = useState<boolean>(false)
@@ -27,13 +36,18 @@ function App() {
 
   return (
     <div className="App">
-      {/* <PageTitle title={'This is APP component'} /> */}
-      {/* <Accordion title={'Menu'} collapsed={accCollapsed} setAccCollapsed={setAccCollapsed}/> */}
-      {/* <UnControlledAccordion title={'Another'} /> */}
-      {/* <Rating value={ratingValue} setRatingValue={setRatingValue}/>
-      <UnControlledRating value={5}/>
-      <UnControlledOnOff onChange={setOn}/> {on.toString()}
-      <OnOff isOn={on} setOn ={setOn}/> */}
+      <PageTitle title={'This is APP component'} />
+      <Accordion
+        items={items}
+        title={'Menu'}
+        collapsed={accCollapsed}
+        setAccCollapsed={setAccCollapsed}
+      />
+      <UnControlledAccordion title={'Another'} />
+      <Rating value={ratingValue} setRatingValue={setRatingValue} />
+      <UnControlledRating value={5} />
+      <UnControlledOnOff onChange={setOn} /> {on.toString()}
+      <OnOff isOn={on} setOn={setOn} />
       <Select
         items={items}
         selectValue={selectValue}

@@ -1,7 +1,8 @@
-import  {PageTitle} from './Title'
+import { PageTitle } from '../../App'
+import  {PageTitleSecret} from './Title'
 
 export default {
-  component: PageTitle,
+  component: PageTitleSecret,
 }
 
 export const Title = () => {

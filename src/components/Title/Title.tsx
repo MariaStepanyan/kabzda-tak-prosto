@@ -2,7 +2,7 @@ type PageTitleType = {
   title: string
 }
 
-export function PageTitle(props: PageTitleType) {
+export function PageTitleSecret(props: PageTitleType) {
   console.log('PageTitle rendering')
   return <h1>{props.title}</h1>
 }

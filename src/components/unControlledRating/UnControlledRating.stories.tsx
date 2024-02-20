@@ -1,7 +1,8 @@
-import { UnControlledRating } from './UnControlledRating'
+import { UnControlledRating } from '../../App'
+import { UnControlledRatingSecret } from './UnControlledRating'
 
 export default {
-  component: UnControlledRating,
+  component: UnControlledRatingSecret,
 }
 
 export const RatingUncontrolled = () => {

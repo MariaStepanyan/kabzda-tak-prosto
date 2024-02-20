@@ -1,7 +1,8 @@
-import  {UnControlledOnOff} from './UnControlledOnOff'
+import { UnControlledOnOff } from '../../App'
+import  {UnControlledOnOffSecret} from './UnControlledOnOff'
 
 export default {
-  component: UnControlledOnOff,
+  component: UnControlledOnOffSecret,
 }
 
 export const OnOffUncontrolled = () => {

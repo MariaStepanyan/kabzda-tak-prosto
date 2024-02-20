@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions'
 
-import { Select } from './Select'
+import { SelectSecret } from './Select'
 import { useState } from 'react'
 export default {
-  component: Select,
+  component: SelectSecret,
 }
 export type ItemType = {
   title: string

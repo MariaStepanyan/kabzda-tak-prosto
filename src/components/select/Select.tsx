@@ -8,7 +8,7 @@ type SelectProps = {
   items: ItemType[]
 }
 
-export const Select = (props: SelectProps) => {
+export const SelectSecret = (props: SelectProps) => {
   const [collapsed, setCollapsed] = useState(true)
   const [hoveredElementValue, setHoveredElementValue] = useState(
     props.selectValue

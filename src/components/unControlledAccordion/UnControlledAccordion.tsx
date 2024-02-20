@@ -1,23 +1,27 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
+import { TOGGLE_COLLAPSED, reducer } from './reducer'
+import React from 'react'
 
 type AccordionPropsType = {
   title: string
 }
 
-export function UnControlledAccordion(props: AccordionPropsType) {
-  console.log('Accordion rendering')
- 
+const AccordionTitile = React.memo(AccordionTitileSecret)
+const AccordionBody = React.memo(AccordionBodySecret)
 
-  const [collapsed, setCollapsed] = useState(true)
+export function UnControlledAccordionSecret(props: AccordionPropsType) {
+  console.log('Accordion rendering')
+
+  const [state, dispatch] = useReducer(reducer, {collapsed: false})
 
   const onClickHandler = () => {
-    setCollapsed(!collapsed)
+    dispatch({ type: TOGGLE_COLLAPSED })
   }
 
   return (
     <>
-      <AccordionTitile accTitle={props.title} onClick={onClickHandler}/>
-      {collapsed && <AccordionBody />}
+      <AccordionTitile accTitle={props.title} onClick={onClickHandler} />
+      {state.collapsed && <AccordionBody />}
     </>
   )
 }
@@ -27,7 +31,7 @@ type AccordionTitilePropstype = {
   onClick: () => void
 }
 
-function AccordionTitile(props: AccordionTitilePropstype) {
+function AccordionTitileSecret(props: AccordionTitilePropstype) {
   console.log('AccordionTitile rendering')
   return <h3 onClick={props.onClick}>{props.accTitle}</h3>
 }
@@ -61,10 +65,7 @@ function AccordionTitile(props: AccordionTitilePropstype) {
 // )
 // }
 
-
-
-
-function AccordionBody() {
+function AccordionBodySecret() {
   console.log('AccordionBody rendering')
   return (
     <ul>

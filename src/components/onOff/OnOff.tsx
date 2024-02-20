@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import s from './onoff.module.css'
 
 type OnOffPropsType = {
@@ -6,7 +5,7 @@ type OnOffPropsType = {
   setOn: (isOn: boolean) => void
 }
 
-export const OnOff = (props: OnOffPropsType) => {
+export const OnOffSecret = (props: OnOffPropsType) => {
   const onClickHandler = () => {
     props.setOn(!props.isOn)
   }

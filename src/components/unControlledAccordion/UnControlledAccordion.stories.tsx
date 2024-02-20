@@ -1,7 +1,8 @@
-import  {UnControlledAccordion} from './UnControlledAccordion'
+import { UnControlledAccordion } from '../../App'
+import  {UnControlledAccordionSecret} from './UnControlledAccordion'
 
 export default {
-  component: UnControlledAccordion,
+  component: UnControlledAccordionSecret,
 }
 
 export const UncontrolledAcc = () => {

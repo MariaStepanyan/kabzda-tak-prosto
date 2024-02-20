@@ -6,7 +6,7 @@ type OnOffPropsType = {
   
 }
 
-export const UnControlledOnOff = (props: OnOffPropsType) => {
+export const UnControlledOnOffSecret = (props: OnOffPropsType) => {
   const [on, setOn] = useState(false)
   const onClickOnHandler = () => {
     setOn(true)

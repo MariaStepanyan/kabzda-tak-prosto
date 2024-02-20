@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React from 'react'
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -7,7 +7,10 @@ type RatingPropsType = {
   setRatingValue: (ratingValue: RatingValueType) => void
 }
 
-export function Rating(props: RatingPropsType) {
+const Star = React.memo(StarSecret)
+
+
+export function RatingSecret(props: RatingPropsType) {
   return (
     <div>
       <Star selected={props.value > 0} value={1} setRatingValue={props.setRatingValue}/>
@@ -25,7 +28,7 @@ type StarPropsType = {
   setRatingValue: (value: RatingValueType) => void
 }
 
-function Star(props: StarPropsType) {
+function StarSecret(props: StarPropsType) {
   return (
     <span
       onClick={() => {

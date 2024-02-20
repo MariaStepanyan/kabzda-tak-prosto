@@ -1,10 +1,13 @@
+import React from 'react'
 import { useState } from 'react'
 
 type RatingPropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export function UnControlledRating(props: RatingPropsType) {
+const Star = React.memo(StarSecret)
+
+export function UnControlledRatingSecret(props: RatingPropsType) {
   const [value, setValue] = useState(0)
 
   return (
@@ -30,7 +33,7 @@ type StarPropsType = {
   value: 1 | 2 | 3 | 4 | 5
 }
 
-function Star(props: StarPropsType) {
+function StarSecret(props: StarPropsType) {
   console.log('Star rendering')
 
   return (
