@@ -8,6 +8,7 @@ import { UnControlledAccordionSecret } from './components/unControlledAccordion/
 import { UnControlledRatingSecret } from './components/unControlledRating/UnControlledRating'
 import { OnOffSecret } from './components/onOff/OnOff'
 import { SelectSecret } from './components/select/Select'
+import { SetTimeOutExample } from './components/setTimeOutExample/SetTimeOutExample'
 
 export type ItemType = {
   title: string
@@ -36,7 +37,8 @@ function App() {
 
   return (
     <div className="App">
-      <PageTitle title={'This is APP component'} />
+      <SetTimeOutExample/>
+      {/* <PageTitle title={'This is APP component'} />
       <Accordion
         items={items}
         title={'Menu'}
@@ -52,7 +54,7 @@ function App() {
         items={items}
         selectValue={selectValue}
         setSelectValue={setSelectValue}
-      />
+      /> */}
     </div>
   )
 }
