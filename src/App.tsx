@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <SetTimeOutExample/>
+      <SetTimeOutExample viewMode={false}/>
       {/* <PageTitle title={'This is APP component'} />
       <Accordion
         items={items}

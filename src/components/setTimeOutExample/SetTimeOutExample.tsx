@@ -1,29 +1,34 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
+import { AnalogCounter } from './AnalogClock'
 
-export const SetTimeOutExample = () => {
-  //   const date = new Date()
-  //   const mlseconds = date.getMilliseconds()
-  //   let [counter, setCounter] = useState(mlseconds)
-  let [counter, setCounter] = useState(new Date())
+type SetTimeOutExamplePropsType = {
+  viewMode: boolean
+}
 
-  //   useEffect(() => {
-  //     setInterval(() => {
+const addNumberNull = (num: number) => (num < 10 ? '0' + num : num)
 
-  //       setCounter((state) => (state < 59 ? state + 1 : 0))
-  //     }, 1000)
-  //   }, [])
+export const SetTimeOutExample: FC<SetTimeOutExamplePropsType> = ({
+  viewMode,
+}) => {
+  let [dateTime, setDateTime] = useState(new Date())
 
   useEffect(() => {
-    setInterval(() => {
-      setCounter((state) => (state = new Date()))
+    const intervalID = setInterval(() => {
+      setDateTime(new Date())
     }, 1000)
+    return () => {
+      clearInterval(intervalID)
+    }
   }, [])
 
-  //   return <>Hello Counter {counter}</>
-  return (
-    <>
-      Hello Counter{' '}
-      {`${counter.getHours()}:${counter.getMinutes()}:${counter.getSeconds()}`}
-    </>
-  )
+  if (viewMode) {
+    return (
+      <>
+        <span>{addNumberNull(dateTime.getHours())}</span>:
+        <span>{addNumberNull(dateTime.getMinutes())}</span>:
+        <span>{addNumberNull(dateTime.getSeconds())}</span>
+      </>
+    )
+  }
+  return <AnalogCounter dateTime={dateTime} />
 }
